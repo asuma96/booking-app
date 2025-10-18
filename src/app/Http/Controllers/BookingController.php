@@ -28,7 +28,7 @@ class BookingController extends Controller
 
         $winStart = $startMsk->setTimeFromTimeString($schedule->start_time);
         $winEnd   = $startMsk->setTimeFromTimeString($schedule->end_time);
-        $endMsk   = $startMsk->addMinutes((int)$duration->minutes);
+        $endMsk = $startMsk->addMinutes((int)$duration->minutes + 30);
 
         if ($startMsk->lt($winStart) || $endMsk->gt($winEnd)) {
             throw ValidationException::withMessages(['time'=>'Время должно укладываться в рабочее окно']);

@@ -20,7 +20,7 @@ class AvailabilityService
         $winStart = $dayMsk->setTimeFromTimeString($row->start_time);
         $winEnd   = $dayMsk->setTimeFromTimeString($row->end_time);
 
-        $durMin = (int)$duration->minutes;
+        $durMin = (int)$duration->minutes + 30;
 
         $busy = Booking::query()
             ->where('service_id', $duration->service_id)

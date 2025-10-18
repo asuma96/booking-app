@@ -22,7 +22,7 @@ final class CreateBookingAction
             ]);
             DB::table('day_locks')->where('id', $lock->id)->lockForUpdate();
 
-            $endMsk = $startMsk->addMinutes((int)$duration->minutes);
+            $endMsk = $startMsk->addMinutes((int)$duration->minutes + 30);
 
             $exists = Booking::query()
                 ->where('service_id', $duration->service_id)
