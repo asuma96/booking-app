@@ -48,10 +48,11 @@ services:
       app:
         condition: service_started
 
-volumes:
-  dbdata:
 
 networks:
   default:
     external: true
     name: booking-app-net
+
+volumes:
+  dbdata:

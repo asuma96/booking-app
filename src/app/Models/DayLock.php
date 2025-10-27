@@ -7,8 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class DayLock extends Model
 {
     public $timestamps = false;
-    protected $primaryKey = null;
-    public $incrementing = false;
     protected $fillable = ['service_id','date'];
     protected $table = 'day_locks';
 }
